@@ -1,19 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<RelativeLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:orientation="vertical"
         tools:context="com.example.tramalho.templates.MainActivity">
 
-    <TextView
+    <FrameLayout android:id="@+id/details"
+                 android:layout_width="match_parent"
+                 android:layout_height="match_parent"
+                 android:layout_above="@+id/template1_id"/>
+
+    <Button
+            android:id="@+id/template1_id"
+            android:text="template1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Hello World!"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            android:layout_margin="@dimen/default_margin"
+            android:onClick="clickTemplate"
+            android:layout_alignParentBottom="true"
+    />
 
-</android.support.constraint.ConstraintLayout>
+    <Button
+            android:id="@+id/template2_id"
+            android:text="template2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/default_margin"
+            android:onClick="clickTemplate"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+    />
+
+</RelativeLayout>

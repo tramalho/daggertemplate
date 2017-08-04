@@ -1,0 +1,38 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:layout_margin="@dimen/double_margin"
+              tools:context="com.example.tramalho.templates.Template1">
+
+    <TextView
+            android:id="@+id/title_id"
+            android:text="@string/title"
+            style="@style/title_style"/>
+
+    <TextView
+            android:id="@+id/subtitle_id"
+            android:text="@string/subtitle"
+            style="@style/subtitle_style"/>
+
+    <com.example.tramalho.templates.ColumnValueView
+            android:id="@+id/delivery_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/double_margin"
+            android:layout_marginBottom="@dimen/double_margin" />
+
+    <com.example.tramalho.templates.TwoColumnValueView
+            android:id="@+id/delivery_info_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/double_margin"
+            android:layout_marginBottom="@dimen/double_margin" />
+
+    <TextView
+            android:id="@+id/message_id"
+            android:text="@android:string/VideoView_error_text_invalid_progressive_playback"
+            style="@style/normal_style"/>
+
+</LinearLayout>

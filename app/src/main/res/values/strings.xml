@@ -1,3 +1,38 @@
 <resources>
     <string name="app_name">Templates</string>
+    <string name="title">title</string>
+    <string name="subtitle">subtitle</string>
+    <string name="info1Label">info 1 label</string>
+    <string name="info1Value">info 1 value</string>
+
+    <string-array name="recibo_entrega">
+        <item>Comprovante de Recebimento</item>
+        <item>Responsaveis pela operação</item>
+        <item>nome</item>
+        <item>Nome do Entregador</item>
+        <item>Empresa</item>
+        <item>Empresa XPTO</item>
+        <item>Código</item>
+        <item>ABC 123 ###</item>
+        <item>Caso os itens estejam violados, não receber a encomenda e ligar para a central de
+            antendimento
+        </item>
+        <item>x</item>
+        <item>y</item>
+    </string-array>
+
+    <string-array name="nota_de_compra">
+        <item>Recibo de compra</item>
+        <item>Descriminaçao dos itens</item>
+        <item>Produto 1</item>
+        <item>100</item>
+        <item>Produto 2</item>
+        <item>200</item>
+        <item>Desconto</item>
+        <item>0</item>
+        <item>confira os produtos no ato da sua retirada, não aceitamos reclamações posteriores</item>
+        <item>Total</item>
+        <item>300</item>
+    </string-array>
+
 </resources>
