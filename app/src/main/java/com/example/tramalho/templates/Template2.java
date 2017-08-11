@@ -1,6 +1,5 @@
 package com.example.tramalho.templates;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -9,6 +8,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.tramalho.templates.di.component.TemplateComponent;
+
+import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -30,6 +33,9 @@ public class Template2 extends Fragment implements Repository.Listener {
     TextView italic;
     private Unbinder unbinder;
 
+    @Inject
+    Repository repository;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +49,9 @@ public class Template2 extends Fragment implements Repository.Listener {
 
         unbinder = ButterKnife.bind(this, view);
 
+        TemplateComponent templateComponent = TemplateApplication.getTemplateComponent();
+        templateComponent.inject(this);
+
         return view;
     }
 
@@ -50,7 +59,8 @@ public class Template2 extends Fragment implements Repository.Listener {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        new Repository(this).request(getString(R.string.endpoint_template));
+        repository.setListener(this);
+        repository.retrieveData(getString(R.string.endpoint_template));
     }
 
     @Override

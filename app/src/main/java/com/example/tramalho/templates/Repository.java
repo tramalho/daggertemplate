@@ -17,17 +17,17 @@ public class Repository implements Callback<Model> {
     public static final String BASE_URL = "http://www.mocky.io/";
     private Listener listener;
 
+    public void setListener(Listener listener) {
+        this.listener = listener;
+    }
 
     interface Listener {
         void success(Model model);
         void failure();
     }
 
-    public Repository(Listener listener) {
-        this.listener = listener;
-    }
 
-    public void request(String hashTemplate) {
+    public void retrieveData(String hashTemplate) {
         Retrofit retrofit = getRetrofit();
         TemplateApi templateApi = retrofit.create(TemplateApi.class);
         Call<Model> call = templateApi.getData(hashTemplate);
